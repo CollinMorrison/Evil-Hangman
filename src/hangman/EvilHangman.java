@@ -110,8 +110,8 @@ public class EvilHangman {
     }
 
     public static String GenerateWordRepresentation(String currentWordRepresentation, String newWordRepresentation) {
-        System.out.println("current key: " + currentWordRepresentation);
-        System.out.println("new key: " + newWordRepresentation);
+        //System.out.println("current key: " + currentWordRepresentation);
+        //System.out.println("new key: " + newWordRepresentation);
         StringBuilder finalRepresentation = new StringBuilder(currentWordRepresentation);
         StringBuilder otherRepresentation = new StringBuilder(newWordRepresentation);
         int index = 0;

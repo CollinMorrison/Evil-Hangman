@@ -105,6 +105,7 @@ public class EvilHangmanGame implements IEvilHangmanGame{
             //return the set that doesn't contain the letter at all
             for (Map.Entry<String, Set<String>> entry : largestSetMap.entrySet()) {
                 if (!entry.getKey().contains(String.valueOf(this.currentGuess))) {
+                    this.subsetKey = entry.getKey();
                     return entry.getValue();
                 }
             }
@@ -142,6 +143,7 @@ public class EvilHangmanGame implements IEvilHangmanGame{
             //if the map has one member, return that set
             if (largestSetMapFewestCharacters.size() == 1) {
                 for (Map.Entry<String, Set<String>> entry : largestSetMapFewestCharacters.entrySet()) {
+                    this.subsetKey = entry.getKey();
                     return entry.getValue();
                 }
             }
@@ -154,6 +156,7 @@ public class EvilHangmanGame implements IEvilHangmanGame{
                 ++numCharacters;
             }
             for (Map.Entry<String, Set<String>> entry : largestSetMapFewestCharactersFarthestRight.entrySet()) {
+                this.subsetKey = entry.getKey();
                 return entry.getValue();
             }
         }
