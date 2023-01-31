@@ -42,7 +42,6 @@ public class EvilHangman {
                         currentWords = game.makeGuess(guess.charAt(0));
                         validInput = true;
                         key = GenerateWordRepresentation(key, game.getSubsetKey());
-                        ++numGuesses;
                         numOfOccurrences = getNumOccurrences(currentWords, guess.charAt(0));
                     } catch (GuessAlreadyMadeException e) {
                         System.out.println("Guess already made! Enter guess: ");
@@ -52,6 +51,7 @@ public class EvilHangman {
             //Display response from input
             if (numOfOccurrences == 0) {
                 System.out.println("Sorry, there are no " + guess + "'s\n");
+                ++numGuesses;
             } else if (numOfOccurrences == 1){
                 System.out.println("Yes, there is " + numOfOccurrences + " " + guess + "\n");
             } else {
